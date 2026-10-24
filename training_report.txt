@@ -1,0 +1,47 @@
+Configuration: {
+  "backbone": "efficientnet_b0",
+  "base_filters": 16,
+  "dense_units": 128,
+  "num_blocks": 4,
+  "dropout": 0.2,
+  "learning_rate": 0.0005,
+  "optimizer": "adamw",
+  "batch_size": 16,
+  "weight_decay": 0.0001,
+  "freeze_backbone": false,
+  "ga_val_macro_f1": 0.3076,
+  "ga_settings": {
+    "generations": 1,
+    "population": 2,
+    "warmup_epochs": 1,
+    "subset_fraction": 0.05
+  }
+}
+
+Best epoch: 1 (val macro F1 0.4667)
+Test accuracy: 0.6587
+Test macro F1: 0.4323
+
+              precision    recall  f1-score   support
+
+       AKIEC     0.2900    0.5918    0.3893        49
+         BCC     0.4404    0.6234    0.5161        77
+         BKL     0.3881    0.6303    0.4804       165
+          DF     0.0667    0.1176    0.0851        17
+         MEL     0.3268    0.2994    0.3125       167
+          NV     0.9547    0.7336    0.8297      1006
+        VASC     0.2714    0.8636    0.4130        22
+
+    accuracy                         0.6587      1503
+   macro avg     0.3911    0.5514    0.4323      1503
+weighted avg     0.7547    0.6587    0.6889      1503
+
+
+Confusion matrix (rows = true):
+[[ 29   8   8   4   0   0   0]
+ [ 10  48  10   2   2   0   5]
+ [ 12  12 104   4  18  11   4]
+ [  7   5   1   2   0   1   1]
+ [ 27   8  44   8  50  23   7]
+ [ 15  27 101  10  81 738  34]
+ [  0   1   0   0   2   0  19]]
